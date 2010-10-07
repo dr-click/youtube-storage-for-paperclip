@@ -4,8 +4,9 @@ This Application contains an implementation of a new storage for Paperclip, yout
 By using this implementation you can upload the videos to youtube throw Paperclip.
 
 Use the example:
-- Download the project.
+- Download the project: $ git clone git://github.com/Dr-Click/youtube-storage-for-paperclip.git
 - Update your youtube credential in "video.rb" file
+- Get into application directory: $ cd youtube-storage-for-paperclip
 - Install the missing gems: $ rake gems:install
 - Database migration: $ rake db:migrate
 - Start the server: $ ruby script\server
