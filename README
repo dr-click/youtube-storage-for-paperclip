@@ -1,1 +1,12 @@
 Youtube Storage for Paperclip
+
+This Application contains an implementation of a new storage for Paperclip, youtube is the new storage, i just for videos only.
+Using this implementation you can upload the videos to youtube throw Paperclip.
+
+Use the example:
+- Download load the project.
+- Update your youtube credential in "video.rb" file
+- Install the missing gems: $ rake gems:install
+- Database migration: $ rake db:migrate
+- Start the server: $ ruby script\server
+- Go to : http://localhost:3000/videos/new
