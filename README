@@ -9,5 +9,19 @@ Use the example:
 - Get into application directory: $ cd youtube-storage-for-paperclip
 - Install the missing gems: $ rake gems:install
 - Database migration: $ rake db:migrate
-- Start the server: $ ruby script\server
+- Start the server: $ ruby script/server
 - Go to : http://localhost:3000/videos/new
+
+
+Integrate with your application:
+- Copy file "/config/initializers/youtube_storage.rb" to your application "initializers" folder, that file contains whole logic of youtube storage.
+- Copy other needed implementations like "migration, video model, helpers" to your application
+
+ 
+Notes:
+- In "/config/initializers/youtube_storage.rb", in the method "youtube_direct_upload" there is a tag "<media:keywords></media:keywords>" to include video tags if exists.
+- The uploading to youtube will take long time depending on file size, so i think you have to delay the uploading job using any delay solution for paperclip, no needs for special handling.
+- You can check for the uploaded videos on youtube, click on "My Videos" from your menu after log-in on youtube.
+- Some times you may have this exception "(Can't connect to Youtube)" in first request to youtube after server starts, I have no reason for this, but it should works fine in the second request.
+
+
