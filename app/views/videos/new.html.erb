@@ -1,0 +1,24 @@
+<h1>New video</h1>
+
+<% form_for(@video, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <label>Title</label>
+    <%=text_field_tag('video[title]', @video.title) %>
+  </p>
+	<p>
+    <label>Description</label>
+    <%=text_field_tag('video[description]', @video.description) %>
+  </p>
+	<p>
+		<label>File</label>
+		<input type="file" size="30" name="video[media]" >
+	</p>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', videos_path %>

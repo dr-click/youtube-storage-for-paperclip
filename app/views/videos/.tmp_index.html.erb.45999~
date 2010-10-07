@@ -1,0 +1,17 @@
+<h1>Listing videos</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @videos.each do |video| %>
+  <tr>
+    <td><strong><%= link_to video.title, video %></strong> >> </td>
+    <td><%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New video', new_video_path %>
